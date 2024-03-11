@@ -1,0 +1,62 @@
+---
+title: "Data Preprocessing_SQL"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("RSQL")) install.packages("RSQL")
+if (!require("RSQLite")) install.packages("RSQLite")
+library(tidyverse)
+library(RSQL)
+library(RSQLite)
+con <- dbConnect(drv = RSQLite::SQLite(),
+dbname = ":memory:")
+DJIA <- read_csv("DJIA_data.csv")
+DJIA$Date <- as.character(DJIA$Date)
+dbWriteTable(conn = con, 
+             name = "DJIA",
+             value = DJIA)
+
+## Select three columns we are going to use
+DJIA_dataset <- DBI::dbGetQuery(conn = con,
+                       statement = "
+                SELECT DATE(Date) AS Date, Close AS Close, [Adj Close] AS 'Adj Close'
+                FROM DJIA
+                ")
+
+dbWriteTable(conn = con, 
+             name = "DJIA_dataset",
+             value = DJIA_dataset)
+
+## Add the date value that are missing
+start_date <- as.Date('2006-12-28')
+end_date <- as.Date('2016-12-29')
+Dates <- data.frame(Date = seq.Date(start_date, end_date, by = "day"))
+Dates$Date <- as.character(Dates$Date)
+
+dbWriteTable(conn = con, 
+             name = "Dates",
+             value = Dates)
+
+DJIA_add_dates <- DBI::dbGetQuery(conn = con,
+                       statement = "
+                  SELECT DATE(Dates.Date) AS Date, Close, [Adj Close] FROM Dates
+                  LEFT JOIN DJIA_dataset
+                  ON DATE(Dates.Date) = DATE(DJIA_dataset.Date)
+                  ")
+
+## Replace NA values
+if (!require("zoo")) install.packages("zoo")
+library(zoo)
+DJIA_add_dates$Close <- na.approx(DJIA_add_dates$Close, na.rm = FALSE)
+DJIA_add_dates$'Adj Close' <- na.approx(DJIA_add_dates$'Adj Close', na.rm = FALSE)
+
+print(DJIA_add_dates)
+```
+
+
