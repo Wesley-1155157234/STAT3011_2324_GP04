@@ -54,3 +54,4 @@ for date, row in df_stocks.iterrows():
 
 print(df.head())
 
+df.to_csv('D:/work/STAT3011Pro2/data/siddata.csv', index=False)
