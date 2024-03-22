@@ -9,12 +9,36 @@ to an increase in the DIJA prices while negative news should lower the DIJA pric
 Methods used and why:
 To help us predict the prices, we used a number of machine learning algorithms from regressions to random forest and ending with neural 
 network-based algorithm, multilayer perceptron (MLP). 
-We started off with simple regressions because they are the most straightforward and simple methods. However with the simpleness they also are one 
-of the least accurate in it's predictions.
+We started off with simple regressions because they are the most straightforward and simple methods. The prediction is a time-series analysis
+problem that is very similar to linear regression which was our first method picked. 
+We started with logistic regression to see what it would look like first and modify or change methods from there.
+Most estimations were not very close although it did help with the implementations of smoothign and alignment. 
+The same results for RandomForest, similar to logistics regression, they were both not very accurate or good at estimations
+without much help from smoothing or alignment. 
+In the end MLP was the most effective approach especially when combined with cross-validation do find the best variable levels.
+MLP is the method who's estimations are actually most following the actual path of the real data showing that it is likely an
+accurate method for estimations. 
 
-"Thesis"
+
+The data is split between testing and training data. The training data is then fed into the algorithm
+before the testing data is tested. The methods are then evaluated to see how accurate they are, 
+this is done through finding the r^2 coefficient value as well as simply examining a visual output.
+The r^2 value have it's own built-in function which we used to find the value while for the visual output
+we graphed the actual values contrasted to the predicted values to see how close the predictions were.
+
+Some other ways to help improve the accuracy of the estimated include smoothing and alignment. 
+Alignment:
+  - Take a contant value and add that onto the predicted values to ensure that it is aligned with
+    the actual values
+  - It is the difference between the average estimated prices and the real prices over a certain
+    time range.
+Smoothing:
+  - Used Exponentially Weighted Moving Average(EWMA) which has a built-in API
+
+
 
 Conclusion:
+
 
 Regression:
   Pro
