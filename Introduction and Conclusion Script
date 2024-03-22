@@ -8,16 +8,9 @@ to an increase in the DIJA prices while negative news should lower the DIJA pric
 
 Methods used and why:
 To help us predict the prices, we used a number of machine learning algorithms from regressions to random forest and ending with neural 
-network-based algorithm, multilayer perceptron (MLP). 
-We started off with simple regressions because they are the most straightforward and simple methods. The prediction is a time-series analysis
-problem that is very similar to linear regression which was our first method picked. 
-We started with logistic regression to see what it would look like first and modify or change methods from there.
-Most estimations were not very close although it did help with the implementations of smoothign and alignment. 
-The same results for RandomForest, similar to logistics regression, they were both not very accurate or good at estimations
-without much help from smoothing or alignment. 
-In the end MLP was the most effective approach especially when combined with cross-validation do find the best variable levels.
-MLP is the method who's estimations are actually most following the actual path of the real data showing that it is likely an
-accurate method for estimations. 
+network-based algorithm, multilayer perceptron (MLP).
+The prediction process is a time-series issue and very similar to linear regression. From the regression family we selected logistics regression
+and ensemble algorithm RandomForestRegressor. With both these algorithms found lacking we implemented the neural network-based algorithm MLP.
 
 
 The data is split between testing and training data. The training data is then fed into the algorithm
@@ -38,7 +31,12 @@ Smoothing:
 
 
 Conclusion:
-
+Both regression algorithms were found lacking even with the help of smoothing and alignment they were not very accurate in their estimates. 
+They were not following the path of the actual data in their estimates therefore are unable to accurately and consistently predict stock index
+prices. 
+In the end MLP was the most effective approach especially when combined with cross-validation do find the best variable levels.
+Looking at the graph, this method method's estimations are the closest and most similar to the real index prices therefore it can 
+provide accurate estimates given article titles. 
 
 Regression:
   Pro
@@ -50,3 +48,4 @@ Neural Network and Cross Validation
   Pro
   Con
 What We Learned
+
