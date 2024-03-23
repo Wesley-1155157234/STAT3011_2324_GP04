@@ -1,23 +1,24 @@
+Presentations points
 Introduction:
-
 Background:
-For this project, we attempted to look for a way to predict stock prices using news article titles. The article titles are taken 
-are taken from the New York Times; we then try and use theres titles to help predict the Dow Jones Industrial Average(DIJA) index prices
-which was taken from Yahoo Finance. The range of the data spans a decade from 2007 - 2016 inclusive. We Hypothesize that positive news should lead 
-to an increase in the DIJA prices while negative news should lower the DIJA prices.
+articles are from NYT
+index prices is the Dow Jones from Yahoo
+ranges 10 years 2007-2016
+articles are put into 
+
 
 Methods used and why:
-To help us predict the prices, we used a number of machine learning algorithms from regressions to random forest and ending with neural 
-network-based algorithm, multilayer perceptron (MLP).
-The prediction process is a time-series issue and very similar to linear regression. From the regression family we selected logistics regression
-and ensemble algorithm RandomForestRegressor. With both these algorithms found lacking we implemented the neural network-based algorithm MLP.
+logistics regression: simplest straighfowards regression algorithm with many built-in functions
+random forest: also relatively simple to use and isn't heavily affected by outliers or missing values
+MLP: more complicated and intensive algorithm but should be the most accurate
 
-
+accuracy and extra stuff:
 The data is split between testing and training data. The training data is then fed into the algorithm
 before the testing data is tested. The methods are then evaluated to see how accurate they are, 
 this is done through finding the r^2 coefficient value as well as simply examining a visual output.
 The r^2 value have it's own built-in function which we used to find the value while for the visual output
 we graphed the actual values contrasted to the predicted values to see how close the predictions were.
+MSE is also used as an alternative to r^ values (specifically in MLP)
 
 Some other ways to help improve the accuracy of the estimated include smoothing and alignment. 
 Alignment:
@@ -44,11 +45,17 @@ MLP is best at estimations in the algorithms that we tried but it has it's own i
 There are many types of artificial neural network algorithms for a variety of types of problems but MLP is a Feedfoward Neural Network(FNN), the simplest
 types of neural network models. Recurrent Neural Networks(RNN) however may have been a better option albeit more complicated to program as unlike FNN where
 it is a one direction flow of information, input --> output, in RNNs they have directed cycles allowing the persistence of data very fitting for time-series 
-problem. Dealing with stocks predictions over long periods of time and especially with economic markets having a lag in response time, this persistence of
+problem.  While forecasting with RNN has flaws they are best fitting for time-series problems. In conclusion the best solution would actually be a comination
+of the two algorithms in a hybrid 
+
+Dealing with stocks predictions over long periods of time and especially with economic markets having a lag in response time, this persistence of
 information overtime may provide even more accurate estimations. With the MLP algorithm, it actually doesn't take into account time and dates, it does not take
 into account the information about yesterday or the day before when determining the estimated price of today which lowers the accuracy of the estimations. 
 In MLPs themselves, one of the most important aspect are the layers, they determine the efficiency and scale of the model. The main aspects that we could have 
 changed in the layers, are the number of layers for each category(input, hidden and output) as well as the weight given. The layer variables were determined through
 cross-validation to find the most optimal/accurate values. 
+
+
+maybe don't predict stock prices, or the very least don't use new articles to predict Dow Jones Prices. 
 
 
