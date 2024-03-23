@@ -37,15 +37,18 @@ prices.
 In the end MLP was the most effective approach especially when combined with cross-validation do find the best variable levels.
 Looking at the graph, this method method's estimations are the closest and most similar to the real index prices therefore it can 
 provide accurate estimates given article titles. 
+The Two regression algorithms are qutie straightwardard and simple to use with readily available built in functions but due to the data
+not being normalized as well some overfitting issues they were found lacking
 
-Regression:
-  Pro
-  Con
-Random Forest
-  Pro
-  Con
-Neural Network and Cross Validation
-  Pro
-  Con
-What We Learned
+MLP is best at estimations in the algorithms that we tried but it has it's own issues. 
+There are many types of artificial neural network algorithms for a variety of types of problems but MLP is a Feedfoward Neural Network(FNN), the simplest
+types of neural network models. Recurrent Neural Networks(RNN) however may have been a better option albeit more complicated to program as unlike FNN where
+it is a one direction flow of information, input --> output, in RNNs they have directed cycles allowing the persistence of data very fitting for time-series 
+problem. Dealing with stocks predictions over long periods of time and especially with economic markets having a lag in response time, this persistence of
+information overtime may provide even more accurate estimations. With the MLP algorithm, it actually doesn't take into account time and dates, it does not take
+into account the information about yesterday or the day before when determining the estimated price of today which lowers the accuracy of the estimations. 
+In MLPs themselves, one of the most important aspect are the layers, they determine the efficiency and scale of the model. The main aspects that we could have 
+changed in the layers, are the number of layers for each category(input, hidden and output) as well as the weight given. The layer variables were determined through
+cross-validation to find the most optimal/accurate values. 
+
 
