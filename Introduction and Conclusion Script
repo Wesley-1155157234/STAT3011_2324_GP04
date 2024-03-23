@@ -10,15 +10,13 @@ articles are put into
 Methods used and why:
 logistics regression: simplest straighfowards regression algorithm with many built-in functions
 random forest: also relatively simple to use and isn't heavily affected by outliers or missing values
-MLP: more complicated and intensive algorithm but should be the most accurate
+MLP: more complicated and intensive algorithm but should be the most accurate. Most simple but also felxible neural-network algorithm
 
 accuracy and extra stuff:
-The data is split between testing and training data. The training data is then fed into the algorithm
-before the testing data is tested. The methods are then evaluated to see how accurate they are, 
-this is done through finding the r^2 coefficient value as well as simply examining a visual output.
-The r^2 value have it's own built-in function which we used to find the value while for the visual output
-we graphed the actual values contrasted to the predicted values to see how close the predictions were.
-MSE is also used as an alternative to r^ values (specifically in MLP)
+Data is split - for cross validation and other tests
+Found r^2 and MSE values
+Relied on visual graphic comparisons
+
 
 Some other ways to help improve the accuracy of the estimated include smoothing and alignment. 
 Alignment:
