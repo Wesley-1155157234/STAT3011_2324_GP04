@@ -29,6 +29,11 @@ Smoothing:
   - Used Exponentially Weighted Moving Average(EWMA) which has a built-in API
 
 
+For the dates part:
+the original method used in the book didn't have the dates involved at all, not using any time factor, we did a basic method of putting the days into an integer from 1-365
+while this had an effect, the overall accuracy of the model didn't not improve - there are likely better options which we could try next time 
+to imporve our estimations
+
 
 Conclusion:
 MLP is best algorithm out of the three we tried. This was determine through comparing the r^2 coefficient number
