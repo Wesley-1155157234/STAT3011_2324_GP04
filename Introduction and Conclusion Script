@@ -35,29 +35,22 @@ MLP is best algorithm out of the three we tried. This was determine through comp
 however although it was the most accurate out of the three algorithms which we used, it is still quite unequiped for predictions
   - this is clear through looking visually at the graphs that was produced
 
-
-Both regression algorithms were found lacking even with the help of smoothing and alignment they were not very accurate in their estimates. 
-They were not following the path of the actual data in their estimates therefore are unable to accurately and consistently predict stock index
-prices. 
-In the end MLP was the most effective approach especially when combined with cross-validation do find the best variable levels.
-Looking at the graph, this method method's estimations are the closest and most similar to the real index prices therefore it can 
-provide accurate estimates given article titles. 
-The Two regression algorithms are qutie straightwardard and simple to use with readily available built in functions but due to the data
-not being normalized as well some overfitting issues they were found lacking
-
-MLP is best at estimations in the algorithms that we tried but it has it's own issues. 
-There are many types of artificial neural network algorithms for a variety of types of problems but MLP is a Feedfoward Neural Network(FNN), the simplest
-types of neural network models. Recurrent Neural Networks(RNN) however may have been a better option albeit more complicated to program as unlike FNN where
-it is a one direction flow of information, input --> output, in RNNs they have directed cycles allowing the persistence of data very fitting for time-series 
+both regressions are very lacking and not not accurate in its estimates at all even after smoothing and alignment
+Implemented cross validation to help find good values to use for the different variables in the MLP
+the MLP was the most effective approach although even that was very inaccurate in it's estimates and if you were actually estimating the stock and 
+using real money, would not recommend following the predictions of the MLP algorithm..
+why?
+  - possibly the lack of normality in the data ensured that the regression models wouldn't work well
+  - overfitting was also a problem with the regressive algorithms although they would be so inaccurate the overfitting is no longer a major issue
+  - for the MLP one of the biggest flaws with the process that we implemented is that it does not take into account the time factor, instead we 
+    kept only the articles as the main changing variable
+    
+MLP is a Feedfoward Neural Network(FNN), the simplest types of neural network models. Recurrent Neural Networks(RNN) however may have been a 
+better option albeit more complicated to program as unlike FNN where it is a one direction flow of information, input --> output, in RNNs they 
+have directed cycles allowing the persistence of data very fitting for time-series 
 problem.  While forecasting with RNN has flaws they are best fitting for time-series problems. In conclusion the best solution would actually be a comination
 of the two algorithms in a hybrid 
 
-Dealing with stocks predictions over long periods of time and especially with economic markets having a lag in response time, this persistence of
-information overtime may provide even more accurate estimations. With the MLP algorithm, it actually doesn't take into account time and dates, it does not take
-into account the information about yesterday or the day before when determining the estimated price of today which lowers the accuracy of the estimations. 
-In MLPs themselves, one of the most important aspect are the layers, they determine the efficiency and scale of the model. The main aspects that we could have 
-changed in the layers, are the number of layers for each category(input, hidden and output) as well as the weight given. The layer variables were determined through
-cross-validation to find the most optimal/accurate values. 
 
 News articles not very good at predicting stock prices
 
