@@ -14,6 +14,7 @@ MLP: more complicated and intensive algorithm but should be the most accurate. M
 
 accuracy and extra stuff:
 Data is split - for cross validation and other tests
+  - used K-fold cross-validations
 Found r^2 and MSE values
 Relied on visual graphic comparisons
 
@@ -30,6 +31,11 @@ Smoothing:
 
 
 Conclusion:
+MLP is best algorithm out of the three we tried. This was determine through comparing the r^2 coefficient number
+however although it was the most accurate out of the three algorithms which we used, it is still quite unequiped for predictions
+  - this is clear through looking visually at the graphs that was produced
+
+
 Both regression algorithms were found lacking even with the help of smoothing and alignment they were not very accurate in their estimates. 
 They were not following the path of the actual data in their estimates therefore are unable to accurately and consistently predict stock index
 prices. 
@@ -53,7 +59,6 @@ In MLPs themselves, one of the most important aspect are the layers, they determ
 changed in the layers, are the number of layers for each category(input, hidden and output) as well as the weight given. The layer variables were determined through
 cross-validation to find the most optimal/accurate values. 
 
-
-maybe don't predict stock prices, or the very least don't use new articles to predict Dow Jones Prices. 
+News articles not very good at predicting stock prices
 
 
